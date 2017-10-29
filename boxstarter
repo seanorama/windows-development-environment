@@ -6,7 +6,7 @@ Update-ExecutionPolicy Unrestricted
 cinst -y Microsoft-Hyper-V-All -source windowsFeatures
 
 # Packages
-cinst -y cmder -pre
+#cinst -y cmder -pre
 cinst -y hyper
 cinst -y Gow
 
@@ -25,6 +25,8 @@ npm install -g npm-windows-upgrade
 
 ## Editors
 cinst -y visualstudiocode
+cinst -y Atom
+cinst -y vim
 
 ## Visual Studio 2015
 cinst -y visualstudio2015community
@@ -52,6 +54,12 @@ cinst -y DotNet3.5
 # cinst -y DotNet4.5 -- not needed on windows 10
 # cinst -y PowerShell -- not needed on windows 10
 if (Test-PendingReboot) { Invoke-Reboot }
+
+# DevOps
+cinst docker-for-windows
+cinst win32-openssh
+cinst awscli
+cinst awstools.powershell
 
 # Pinning Things
 Install-ChocolateyPinnedTaskBarItem "$env:programfiles\Google\Chrome\Application\chrome.exe"
